@@ -5,6 +5,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>record-server</module>
+		<module>record-client-1</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -29,12 +30,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
-		</dependency>
-
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -57,9 +52,17 @@
 				<scope>import</scope>
 			</dependency>
 
+			<!-- 服务端 -->
 			<dependency>
 				<groupId>org.thenx.research.server</groupId>
 				<artifactId>record-server</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- 客户端 1 -->
+			<dependency>
+				<groupId>org.thenx.research.client.1</groupId>
+				<artifactId>record-client-1</artifactId>
 				<version>1.0.0</version>
 			</dependency>
 		</dependencies>

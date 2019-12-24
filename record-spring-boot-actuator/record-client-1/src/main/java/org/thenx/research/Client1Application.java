@@ -1,19 +1,17 @@
 package org.thenx.research;
 
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author May
  * <p>
- * Actuator 服务端
+ * Actuator 客户端 1
  */
-@EnableAdminServer
 @SpringBootApplication
-public class ServerApplication {
+public class Client1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServerApplication.class, args);
+        SpringApplication.run(Client1Application.class, args);
     }
 }
