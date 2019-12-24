@@ -1,0 +1,20 @@
+# 配置 Actuator 客户端 2 及 服务端地址
+spring:
+  application:
+    name: Actuator 客户端 2
+  boot:
+    admin:
+      client:
+        url: http://localhost:31000
+server:
+  port: 31002
+
+# 添加监控规则
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

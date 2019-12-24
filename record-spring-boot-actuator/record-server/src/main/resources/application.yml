@@ -1,0 +1,8 @@
+# 配置当前Spring项目名称
+spring:
+  application:
+    name: Actuator 服务端
+
+# 配置端口
+server:
+  port: 31000
