@@ -6,6 +6,7 @@
 	<modules>
 		<module>record-server</module>
 		<module>record-client-1</module>
+		<module>record-client-2</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -63,6 +64,13 @@
 			<dependency>
 				<groupId>org.thenx.research.client.1</groupId>
 				<artifactId>record-client-1</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- 客户端 2 -->
+			<dependency>
+				<groupId>org.thenx.research.client.2</groupId>
+				<artifactId>record-client-2</artifactId>
 				<version>1.0.0</version>
 			</dependency>
 		</dependencies>
