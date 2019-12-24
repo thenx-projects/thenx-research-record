@@ -58,7 +58,7 @@
 			</dependency>
 
 			<dependency>
-				<groupId>org.thenx.record.server</groupId>
+				<groupId>org.thenx.research.server</groupId>
 				<artifactId>record-server</artifactId>
 				<version>1.0.0</version>
 			</dependency>
