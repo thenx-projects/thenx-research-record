@@ -9,5 +9,9 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:32000/eureka
+
+  # 添加心跳检测机制
+  instance:
+    lease-renewal-interval-in-seconds: 20
 #  server:
 #    enable-self-preservation: false

@@ -7,9 +7,9 @@
         <artifactId>record-spring-cloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>record-cloud-client-1</artifactId>
-    <name>record-cloud-client-1</name>
-    <description>Spring Cloud Eureka 客户端 1</description>
+    <artifactId>record-cloud-feign-client-1</artifactId>
+    <name>record-cloud-feign-client-1</name>
+    <description>Spring Cloud Feign client</description>
     <packaging>jar</packaging>
 
     <properties>
@@ -21,6 +21,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>
