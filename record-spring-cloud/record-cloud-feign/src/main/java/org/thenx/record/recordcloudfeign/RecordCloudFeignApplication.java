@@ -1,4 +1,4 @@
-package org.thenx.record.recordcloudfegin;
+package org.thenx.record.recordcloudfeign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @author May
  *
- * Fegin 提供服务
+ * feign 提供服务
  */
 @EnableDiscoveryClient
 @EnableFeignClients

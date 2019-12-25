@@ -62,7 +62,7 @@
                 <version>1.0.0</version>
             </dependency>
 
-            <!-- Fegin -->
+            <!-- feign -->
             <dependency>
                 <groupId>org.thenx.research.feign</groupId>
                 <artifactId>record-cloud-feign</artifactId>

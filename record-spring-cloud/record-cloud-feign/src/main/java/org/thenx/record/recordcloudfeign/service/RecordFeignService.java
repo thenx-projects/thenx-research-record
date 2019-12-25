@@ -1,4 +1,4 @@
-package org.thenx.record.recordcloudfegin.service;
+package org.thenx.record.recordcloudfeign.service;
 
 /**
  * @author May
