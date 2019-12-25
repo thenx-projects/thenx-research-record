@@ -3,6 +3,8 @@ spring:
     name: eureka-client-1
 server:
   port: 32001
+  servlet:
+    context-path: /eureka-client-1
 eureka:
   client:
     service-url:
