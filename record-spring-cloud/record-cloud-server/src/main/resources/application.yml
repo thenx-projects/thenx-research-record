@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Eureka ·þÎñ¶Ë
+    name: Eureka server
 server:
   port: 32000
 eureka:
@@ -9,3 +9,5 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:32000/eureka/
+  server:
+    enable-self-preservation: false

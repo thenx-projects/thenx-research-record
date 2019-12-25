@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.thenx.record</groupId>
-    <artifactId>record-cloud-server</artifactId>
-    <version>1.0.0</version>
-    <name>record-cloud-server</name>
-    <description>Spring Cloud Eureka 服务端</description>
+    <artifactId>record-cloud-client-1</artifactId>
+    <version>1.0.0.</version>
+    <name>record-cloud-client-1</name>
+    <description>Spring Cloud Eureka 客户端 1</description>
     <packaging>jar</packaging>
 
     <properties>
@@ -23,7 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <dependency>
