@@ -5,6 +5,7 @@
     <modules>
         <module>record-cloud-server</module>
         <module>record-cloud-client-1</module>
+        <module>record-cloud-fegin</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -57,6 +58,13 @@
             <dependency>
                 <groupId>org.thenx.research.client.1</groupId>
                 <artifactId>record-cloud-client-1</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Fegin -->
+            <dependency>
+                <groupId>org.thenx.research.fegin</groupId>
+                <artifactId>record-cloud-fegin</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>
