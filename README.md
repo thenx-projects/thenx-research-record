@@ -6,5 +6,9 @@
     * record-server: 31000
     * record-client-1: 31001
     * record-client-2: 31002
+* record-spring-cloud
+    * record-cloud-server: 32000
+    * record-cloud-client-1: 32001
+
 
 

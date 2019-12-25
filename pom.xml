@@ -6,6 +6,7 @@
 
     <modules>
         <module>record-spring-boot-actuator</module>
+        <module>record-spring-cloud</module>
     </modules>
 
     <groupId>org.thenx.research.record</groupId>
