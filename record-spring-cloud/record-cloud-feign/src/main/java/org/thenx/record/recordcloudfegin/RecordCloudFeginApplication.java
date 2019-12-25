@@ -1,13 +1,13 @@
-package org.thenx.record.recordspringcloudfegin;
+package org.thenx.record.recordcloudfegin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RecordSpringCloudFeginApplication {
+public class RecordCloudFeginApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RecordSpringCloudFeginApplication.class, args);
+        SpringApplication.run(RecordCloudFeginApplication.class, args);
     }
 
 }

@@ -7,11 +7,10 @@
         <artifactId>record-spring-cloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <groupId>org.thenx.record</groupId>
-    <artifactId>record-spring-cloud-fegin</artifactId>
-    <version>1.0.0</version>
-    <name>record-spring-cloud-fegin</name>
-    <description>Spring Cloud Fegin</description>
+    <artifactId>record-cloud-fegin</artifactId>
+    <name>record-cloud-feign</name>
+    <description>Spring Cloud Feign</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
