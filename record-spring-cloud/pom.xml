@@ -2,6 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>record-cloud-server</module>
+        <module>record-cloud-client-1</module>
+    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -14,6 +18,7 @@
     <name>record-spring-cloud</name>
     <description>Spring Cloud系列技术总结</description>
     <packaging>pom</packaging>
+
 
     <properties>
         <java.version>1.8</java.version>
@@ -37,5 +42,24 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- 服务端 -->
+            <dependency>
+                <groupId>org.thenx.research.server</groupId>
+                <artifactId>record-cloud-server</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- 客户端 -->
+            <dependency>
+                <groupId>org.thenx.research.client.1</groupId>
+                <artifactId>record-cloud-client-1</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
