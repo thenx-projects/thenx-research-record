@@ -1,8 +1,10 @@
 spring:
   application:
-    name: eureka-client-1
+    name: feign-client
 server:
-  port: 32001
+  port: 32004
+  servlet:
+    context-path: /client
 eureka:
   client:
     service-url:

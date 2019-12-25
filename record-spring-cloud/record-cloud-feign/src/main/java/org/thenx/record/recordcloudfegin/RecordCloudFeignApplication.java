@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @author May
  *
- * Fegin 调用服务
+ * Fegin 提供服务
  */
 @EnableDiscoveryClient
 @EnableFeignClients
