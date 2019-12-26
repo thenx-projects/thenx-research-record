@@ -7,6 +7,7 @@
         <module>record-cloud-client-1</module>
         <module>record-cloud-feign</module>
         <module>record-cloud-feign-client-1</module>
+        <module>record-cloud-hystrix</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -72,6 +73,13 @@
             <dependency>
                 <groupId>org.thenx.research.feign.client.1</groupId>
                 <artifactId>record-cloud-feign-client-1</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Hystrix -->
+            <dependency>
+                <groupId>org.thenx.research.hystrix</groupId>
+                <artifactId>record-cloud-hystrix</artifactId>
                 <version>1.0.0</version>
             </dependency>
 
