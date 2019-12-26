@@ -1,10 +1,10 @@
-package org.thenx.record.recordcloudfegin;
+package org.thenx.record.recordcloudfeign;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RecordCloudFeginApplicationTests {
+class RecordCloudfeignApplicationTests {
 
     @Test
     void contextLoads() {

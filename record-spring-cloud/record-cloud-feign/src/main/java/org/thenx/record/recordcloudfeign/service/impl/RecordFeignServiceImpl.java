@@ -1,7 +1,7 @@
-package org.thenx.record.recordcloudfegin.service.impl;
+package org.thenx.record.recordcloudfeign.service.impl;
 
 import org.springframework.stereotype.Service;
-import org.thenx.record.recordcloudfegin.service.RecordFeignService;
+import org.thenx.record.recordcloudfeign.service.RecordFeignService;
 
 /**
  * @author May
