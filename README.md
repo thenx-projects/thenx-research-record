@@ -11,6 +11,6 @@
     * record-cloud-client-1: 32001
     * record-cloud-feign: 32003
     * record-cloud-feign-client-1: 32004
-
+* record-spring-boot-swagger: 32009
 
 
