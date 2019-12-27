@@ -8,6 +8,7 @@
         <module>record-cloud-feign</module>
         <module>record-cloud-feign-client-1</module>
         <module>record-cloud-hystrix</module>
+        <module>record-cloud-zuul</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
