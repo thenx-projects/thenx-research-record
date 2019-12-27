@@ -12,6 +12,7 @@
     <version>1.0.0</version>
     <name>record-cloud-zuul</name>
     <description>Spring Cloud Zuul 网关</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>

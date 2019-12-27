@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: record-zuul
+
+server:
+  port: 32010
+  servlet:
+    context-path: /zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:32000/eureka
+zuul:
+  routes:
+    routes-zuul: /control/**
