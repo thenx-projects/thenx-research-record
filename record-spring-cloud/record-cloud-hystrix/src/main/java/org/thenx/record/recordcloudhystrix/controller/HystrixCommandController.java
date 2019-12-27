@@ -3,6 +3,7 @@ package org.thenx.record.recordcloudhystrix.controller;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.thenx.record.recordcloudhystrix.service.EurekaClientService;
 
@@ -45,8 +46,8 @@ public class HystrixCommandController {
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "30")
     }, fallbackMethod = "rollback")
     @GetMapping(value = "/command")
-    public String result(String name) {
-        if ("1".equals(name)) {
+    public String result(@RequestParam("no") String number) {
+        if ("1".equals(number)) {
             return "正常调用";
         }
         return eurekaClientService.ec();
