@@ -7,9 +7,11 @@
         <artifactId>record-spring-cloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>record-cloud-client-1</artifactId>
-    <name>record-cloud-client-1</name>
-    <description>Spring Cloud Eureka 客户端 1</description>
+    <groupId>org.thenx.record</groupId>
+    <artifactId>record-cloud-zuul</artifactId>
+    <version>1.0.0</version>
+    <name>record-cloud-zuul</name>
+    <description>Spring Cloud Zuul 网关</description>
     <packaging>jar</packaging>
 
     <properties>
@@ -22,10 +24,9 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
 
         <dependency>
