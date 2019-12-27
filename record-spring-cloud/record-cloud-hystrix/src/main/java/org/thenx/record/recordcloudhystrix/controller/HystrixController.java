@@ -1,6 +1,7 @@
 package org.thenx.record.recordcloudhystrix.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +25,17 @@ public class HystrixController {
 
     /**
      * 正常调用方法
+     * <p>
+     * 默认一秒，直接添加这个注解 HystrixCommand(fallbackMethod = "rollback")
+     * <p>
+     * 根据业务不同可做时间调整
      *
      * @return string
      */
-    @HystrixCommand(fallbackMethod = "rollback")
+    @HystrixCommand(commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",
+                    value = "5000")
+    }, fallbackMethod = "rollback")
     @GetMapping("/nm")
     public String normalMethod() {
         logger.info("\n -------> 正常调用Hystrix方法");
@@ -36,10 +44,13 @@ public class HystrixController {
 
     /**
      * 出发熔断机制回调 rollback 方法
+     * <p>
+     * 当上面的方法出现异常或在指定时间未返回时(默认超时时间1s),会调用此函数
      *
      * @return string
      */
     public String rollback() {
+        logger.info("\n -------> 触发熔断机制回调 rollback 方法");
         return "触发熔断机制回调 rollback 方法";
     }
 }
