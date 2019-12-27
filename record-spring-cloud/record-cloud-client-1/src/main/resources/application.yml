@@ -9,3 +9,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:32000/eureka
+
+# 暴露 Hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'
