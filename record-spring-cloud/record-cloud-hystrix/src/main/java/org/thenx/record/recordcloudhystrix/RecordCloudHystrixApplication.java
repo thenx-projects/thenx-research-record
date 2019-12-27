@@ -1,14 +1,14 @@
 package org.thenx.record.recordcloudhystrix;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 
 /**
  * @author May
  * <p>
  * Hystrix
  */
-@SpringBootApplication
+@SpringCloudApplication
 public class RecordCloudHystrixApplication {
 
     public static void main(String[] args) {
