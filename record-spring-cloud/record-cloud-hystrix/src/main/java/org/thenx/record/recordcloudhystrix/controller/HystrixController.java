@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.thenx.record.recordcloudhystrix.service.EurekaClientService;
+
+import javax.annotation.Resource;
 
 /**
  * @author May
@@ -16,6 +19,9 @@ public class HystrixController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Resource
+    private EurekaClientService eurekaClientService;
+
     /**
      * 正常调用方法
      *
@@ -24,7 +30,8 @@ public class HystrixController {
     @HystrixCommand(fallbackMethod = "rollback")
     @GetMapping("/nm")
     public String normalMethod() {
-        return "正常调用Hystrix方法";
+        logger.info("\n -------> 正常调用Hystrix方法");
+        return eurekaClientService.ec();
     }
 
     /**
