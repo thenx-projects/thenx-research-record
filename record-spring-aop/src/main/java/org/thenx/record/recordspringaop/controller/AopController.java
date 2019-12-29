@@ -12,6 +12,11 @@ import org.thenx.record.recordspringaop.service.AopService;
 @RestController
 public class AopController {
 
+    /**
+     * 返回一个 str
+     *
+     * @return str
+     */
     @GetMapping(value = "/aop")
     public String aop() {
         AopService aopService = () -> "返回接口";
