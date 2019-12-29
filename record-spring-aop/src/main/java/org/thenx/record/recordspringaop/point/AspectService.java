@@ -20,7 +20,7 @@ public class AspectService {
 
     @Pointcut(value = "execution(* org.thenx..*.*(..))")
     public void pointcut() {
-        logger.info("\n-------> 1. 进入 @Pointcut方法");
+        logger.info("\n-------> 0. 进入 @Pointcut方法");
     }
 
     /**
@@ -33,9 +33,9 @@ public class AspectService {
      */
     @Around(value = "pointcut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        logger.info("\n-------> 6. 进入 @Around 方法" + " ProceedingJoinPoint: " + joinPoint);
+        logger.info("\n-------> 1. 进入 @Around 方法" + " ProceedingJoinPoint: " + joinPoint);
         try {
-            logger.info("\n-------> try 进入 Around 方法");
+            logger.info("\n-------> try 进入 Around 方法" + " join point: " + joinPoint.proceed());
             return joinPoint.proceed();
         } catch (Throwable e) {
             e.printStackTrace();

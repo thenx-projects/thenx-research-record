@@ -10,6 +10,8 @@ public interface AopService {
 
     /**
      * 返回个接口
+     *
+     * @param param 整型参数
      */
-    String resp();
+    String resp(int param);
 }

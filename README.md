@@ -13,6 +13,6 @@
     * record-cloud-feign-client-1: 32004
     * record-cloud-zuul: 32010
 * record-spring-boot-swagger: 32009
-
+* record-spring-aop: 32012
 
 
