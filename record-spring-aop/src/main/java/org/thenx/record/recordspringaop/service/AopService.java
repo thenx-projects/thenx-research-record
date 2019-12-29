@@ -11,5 +11,5 @@ public interface AopService {
     /**
      * 返回个接口
      */
-    void resp();
+    String resp();
 }
