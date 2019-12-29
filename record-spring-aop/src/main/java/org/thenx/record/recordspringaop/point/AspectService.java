@@ -25,26 +25,27 @@ public class AspectService {
 
     @Before(value = "pointcut()")
     public void beginTransaction() {
-        System.out.println("before beginTransaction");
+        logger.info("\n-------> 2. 进入 @Before 方法");
     }
 
     @After(value = "pointcut()")
     public void commit() {
-        System.out.println("after commit");
+        logger.info("\n-------> 3. 进入 @After 方法");
     }
 
     @AfterReturning(value = "pointcut()", returning = "returnObject")
     public void afterReturning(JoinPoint joinPoint, Object returnObject) {
-        System.out.println("afterReturning");
+        logger.info("\n-------> 4. 进入 @AfterReturning 方法" + " JoinPoint: " + joinPoint + " & returnObject: " + returnObject);
     }
 
     @AfterThrowing(value = "pointcut()")
     public void afterThrowing() {
-        System.out.println("afterThrowing afterThrowing  rollback");
+        logger.info("\n-------> 5. 进入 @AfterThrowing 方法，异常可回滚");
     }
 
     @Around(value = "pointcut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info("\n-------> 6. 进入 @Around 方法" + " ProceedingJoinPoint: " + joinPoint);
         try {
             System.out.println("around");
             return joinPoint.proceed();
