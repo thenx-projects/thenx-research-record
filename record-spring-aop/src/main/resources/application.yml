@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-aop
+
+server:
+  port: 32012
+  servlet:
+    context-path: /aop
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:32000/eureka
