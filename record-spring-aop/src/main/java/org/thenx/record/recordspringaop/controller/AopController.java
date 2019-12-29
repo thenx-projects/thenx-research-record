@@ -25,6 +25,7 @@ public class AopController {
         if (param == 1) {
             return aopService.resp(param);
         } else {
+            // 刻意让AOP捕捉异常
             throw new RuntimeException("传入参数不为 1");
         }
     }
