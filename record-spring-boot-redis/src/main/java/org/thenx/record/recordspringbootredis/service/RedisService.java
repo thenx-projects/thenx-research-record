@@ -14,5 +14,5 @@ public interface RedisService {
      * @param id id
      * @return str
      */
-    String resp(Integer id);
+    String resp(String id);
 }
