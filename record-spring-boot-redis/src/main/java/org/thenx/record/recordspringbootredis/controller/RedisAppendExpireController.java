@@ -15,10 +15,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author May
  * <p>
- * Redis 插入时附带过期时间
+ * 更新过期时间
  */
 @RestController
-public class RedisExpireController {
+public class RedisAppendExpireController {
 
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -27,12 +27,12 @@ public class RedisExpireController {
     private RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * Redis 设置过期时间接口测试
+     * Redis 延长过期时间接口测试
      *
      * @param i id
      * @return str
      */
-    @GetMapping(value = "/setExpire")
+    @GetMapping(value = "/appendExpire")
     public String redis(@RequestParam("id") Integer i) {
 
         String id;
@@ -45,9 +45,12 @@ public class RedisExpireController {
         RedisService redisService = null;
         // Redis 附带过期时间的增加操作
         redisService = p -> {
-            redisTemplate.opsForValue().setIfAbsent(p, "插入一个带过期30秒时间的值", 30, TimeUnit.SECONDS);
-            logger.info("插入了附带时间的：" + redisTemplate.opsForValue().get(p));
-            return "插入了附带时间的：" + redisTemplate.opsForValue().get(p);
+            String param = (String) redisTemplate.opsForValue().get(p);
+            if (param != null) {
+                redisTemplate.expire(param, 10, TimeUnit.MINUTES);
+                logger.info("延长时间：" + redisTemplate.opsForValue().get(param));
+            }
+            return "延长时间：" + redisTemplate.opsForValue().get(Objects.requireNonNull(param));
         };
         return redisService.resp(id);
     }
