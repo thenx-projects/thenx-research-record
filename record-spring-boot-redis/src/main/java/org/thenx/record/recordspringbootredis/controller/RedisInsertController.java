@@ -15,10 +15,10 @@ import java.util.Objects;
 /**
  * @author May
  * <p>
- * redis 测试接口
+ * redis 增加测试接口
  */
 @RestController
-public class RedisController {
+public class RedisInsertController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -26,12 +26,12 @@ public class RedisController {
     private RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * Redis 接口测试
+     * Redis 增加接口测试
      *
      * @param i id
      * @return str
      */
-    @GetMapping(value = "/test")
+    @GetMapping(value = "/insert")
     public String redis(@RequestParam("id") Integer i) {
 
         String id = "";
@@ -47,9 +47,10 @@ public class RedisController {
             String param = (String) redisTemplate.opsForValue().get(p);
             if (param == null) {
                 redisTemplate.opsForValue().set(p, "插入数据一条：" + p);
+                logger.info("\n -----> 插入成功");
                 return "插入一条到 Redis: " + Objects.requireNonNull(redisTemplate.opsForValue().get(p)).toString();
             } else {
-                return "插入异常了";
+                return "数据为空";
             }
         };
         return redisService.resp(id);
