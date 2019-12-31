@@ -10,14 +10,15 @@ import org.thenx.record.recordspringbootredis.service.RedisService;
 
 import javax.annotation.Resource;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author May
  * <p>
- * Redis 删除操作
+ * Redis 插入时附带过期时间
  */
 @RestController
-public class RedisDelController {
+public class RedisExpireController {
 
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -31,7 +32,7 @@ public class RedisDelController {
      * @param i id
      * @return str
      */
-    @GetMapping(value = "/del")
+    @GetMapping(value = "/setExpire")
     public String redis(@RequestParam("id") Integer i) {
 
         String id;
@@ -42,20 +43,11 @@ public class RedisDelController {
         }
 
         RedisService redisService = null;
-        // Redis 删除操作
+        // Redis 附带过期时间的增加操作
         redisService = p -> {
-            String param = (String) redisTemplate.opsForValue().get(p);
-            if (param != null) {
-                redisTemplate.delete(param);
-                if (redisTemplate.opsForValue().get(p) == null) {
-                    logger.info("\n -----> 数据删除成功");
-                } else {
-                    logger.info("\n -----> 删除失败：" + redisTemplate.opsForValue().get(p));
-                }
-                return "删除数据 Redis: " + Objects.requireNonNull(redisTemplate.opsForValue().get(p));
-            } else {
-                return "删除失败";
-            }
+            redisTemplate.opsForValue().setIfAbsent(p, "插入一个带过期30秒时间的值", 30, TimeUnit.SECONDS);
+            logger.info("插入了附带时间的：" + redisTemplate.opsForValue().get(p));
+            return "插入了附带时间的：" + redisTemplate.opsForValue().get(p);
         };
         return redisService.resp(id);
     }
