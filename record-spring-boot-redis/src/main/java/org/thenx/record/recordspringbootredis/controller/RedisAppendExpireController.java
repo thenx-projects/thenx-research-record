@@ -47,10 +47,10 @@ public class RedisAppendExpireController {
         redisService = p -> {
             String param = (String) redisTemplate.opsForValue().get(p);
             if (param != null) {
-                redisTemplate.expire(param, 10, TimeUnit.MINUTES);
-                logger.info("延长时间：" + redisTemplate.opsForValue().get(param));
+                redisTemplate.expire(p, 10, TimeUnit.MINUTES);
+                logger.info("延长时间：" + redisTemplate.opsForValue().get(p));
             }
-            return "延长时间：" + redisTemplate.opsForValue().get(Objects.requireNonNull(param));
+            return "延长时间：" + redisTemplate.opsForValue().get(Objects.requireNonNull(p));
         };
         return redisService.resp(id);
     }
