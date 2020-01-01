@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.thenx.record.recordspringbootredis.service.RedisService;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author May
@@ -53,6 +51,38 @@ public class RedisCollectionController {
             redisTemplate.opsForList().leftPush(p, list);
             logger.info("\n----------> list: " + redisTemplate.opsForList().leftPop(p));
             return "list 中的参数：" + redisTemplate.opsForList().leftPop(p);
+        };
+        return redisService.resp(id);
+    }
+
+    /**
+     * Redis map操作
+     *
+     * @param i id
+     * @return str
+     */
+    @GetMapping(value = "/map")
+    public String redisMap(@RequestParam("id") Integer i) {
+
+        Map<String, Object> map = new HashMap<>(8);
+
+        String id;
+        if (i == null) {
+            throw new RuntimeException("参数没有传对: " + i);
+        } else {
+            id = i + "";
+        }
+
+        RedisService redisService = null;
+        // Redis map 操作
+        redisService = p -> {
+            map.put("第一个 map: ", "map1");
+            map.put("第二个 map: ", "map2");
+            map.put("第三个 map: ", "map3");
+            redisTemplate.opsForHash().putAll(p, map);
+            logger.info("\n----------> map中的值: " + redisTemplate.opsForHash().values(p));
+            logger.info("\n----------> map中的键值对: " + redisTemplate.opsForHash().entries(p));
+            return "list 中的参数：" + redisTemplate.opsForHash().values(p);
         };
         return redisService.resp(id);
     }
