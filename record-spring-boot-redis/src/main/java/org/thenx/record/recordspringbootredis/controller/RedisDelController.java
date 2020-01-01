@@ -1,6 +1,5 @@
 package org.thenx.record.recordspringbootredis.controller;
 
-import org.aopalliance.intercept.MethodInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,10 +14,11 @@ import java.util.Objects;
 /**
  * @author May
  * <p>
- * redis 测试接口
+ * Redis 删除操作
  */
 @RestController
-public class RedisController {
+public class RedisDelController {
+
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -26,15 +26,15 @@ public class RedisController {
     private RedisTemplate<String, Object> redisTemplate;
 
     /**
-     * Redis 接口测试
+     * Redis 删除接口测试
      *
      * @param i id
      * @return str
      */
-    @GetMapping(value = "/test")
+    @GetMapping(value = "/del")
     public String redis(@RequestParam("id") Integer i) {
 
-        String id = "";
+        String id;
         if (i == null) {
             throw new RuntimeException("参数没有传对: " + i);
         } else {
@@ -42,14 +42,19 @@ public class RedisController {
         }
 
         RedisService redisService = null;
-        // Redis 增加操作
+        // Redis 删除操作
         redisService = p -> {
             String param = (String) redisTemplate.opsForValue().get(p);
-            if (param == null) {
-                redisTemplate.opsForValue().set(p, "插入数据一条：" + p);
-                return "插入一条到 Redis: " + Objects.requireNonNull(redisTemplate.opsForValue().get(p)).toString();
+            if (param != null) {
+                redisTemplate.delete(param);
+                if (redisTemplate.opsForValue().get(p) == null) {
+                    logger.info("\n -----> 数据删除成功");
+                } else {
+                    logger.info("\n -----> 删除失败：" + redisTemplate.opsForValue().get(p));
+                }
+                return "删除数据 Redis: " + Objects.requireNonNull(redisTemplate.opsForValue().get(p));
             } else {
-                return "插入异常了";
+                return "删除失败";
             }
         };
         return redisService.resp(id);
