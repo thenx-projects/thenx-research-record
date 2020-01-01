@@ -14,5 +14,6 @@
     * record-cloud-zuul: 32010
 * record-spring-boot-swagger: 32009
 * record-spring-aop: 32012
+* record-spring-boot-redis: 33000
 
 
