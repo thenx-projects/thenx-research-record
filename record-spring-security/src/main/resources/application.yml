@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-security
+server:
+  port: 34000
+  servlet:
+    context-path: /security
+
+
