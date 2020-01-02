@@ -1,6 +1,10 @@
 spring:
   application:
     name: spring-security
+  security:
+    user:
+      name: admin
+      password: admin
 server:
   port: 34000
   servlet:
@@ -10,3 +14,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:32000/eureka
+
