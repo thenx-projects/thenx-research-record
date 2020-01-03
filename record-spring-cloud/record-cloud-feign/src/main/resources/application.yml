@@ -1,6 +1,10 @@
 spring:
   application:
     name: feign-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:31000
 server:
   port: 32003
   servlet:

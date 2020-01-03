@@ -1,19 +1,21 @@
 spring:
   application:
-    name: record-zuul
+    name: spring-security
+  security:
+    user:
+      name: admin
+      password: admin
   boot:
     admin:
       client:
         url: http://localhost:31000
-
 server:
-  port: 32010
+  port: 34000
   servlet:
-    context-path: /zuul
+    context-path: /security
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:32000/eureka
-zuul:
-  routes:
-    routes-zuul: /control/**
+

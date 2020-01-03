@@ -1,5 +1,9 @@
 spring:
   application:
     name: swagger
+  boot:
+    admin:
+      client:
+        url: http://localhost:31000
 server:
   port: 32009

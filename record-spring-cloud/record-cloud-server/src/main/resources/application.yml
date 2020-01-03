@@ -1,6 +1,10 @@
 spring:
   application:
     name: eureka-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:31000
 server:
   port: 32000
 eureka:
@@ -10,7 +14,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:32000/eureka
 
-  # Ìí¼ÓÐÄÌø¼ì²â»úÖÆ
+  # å¿ƒè·³æ£€æµ‹æœºåˆ¶
   instance:
     lease-renewal-interval-in-seconds: 20
 #  server:
