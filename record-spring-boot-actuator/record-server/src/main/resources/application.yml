@@ -6,3 +6,8 @@ spring:
 # 配置端口
 server:
   port: 31000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:32000/eureka
