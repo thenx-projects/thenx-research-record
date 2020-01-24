@@ -12,18 +12,8 @@ spring:
         max-idle: 10
         max-wait: -1
         min-idle: 3
-  boot:
-    admin:
-      client:
-        url: http://localhost:31000
+
 server:
   port: 33000
   servlet:
     context-path: /redis
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:32000/eureka
-
-
