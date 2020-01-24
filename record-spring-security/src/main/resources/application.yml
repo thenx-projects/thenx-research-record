@@ -5,17 +5,10 @@ spring:
     user:
       name: admin
       password: admin
-  boot:
-    admin:
-      client:
-        url: http://localhost:31000
+
 server:
   port: 34000
   servlet:
     context-path: /security
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:32000/eureka
 
