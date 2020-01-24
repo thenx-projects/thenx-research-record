@@ -1,1 +1,24 @@
+spring:
+  application:
+    name: spring-kafka
+
+  kafka:
+    # kafka 地址
+    bootstrap-servers: localhost:9092
+    # 生产者
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+    # 消费者
+    consumer:
+      group-id: group_id_in_there
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+server:
+  port: 35000
+  servlet:
+    context-path: /kafka
+
 
