@@ -1,10 +1,6 @@
 spring:
   application:
     name: record-zuul
-  boot:
-    admin:
-      client:
-        url: http://localhost:31000
 
 server:
   port: 32010

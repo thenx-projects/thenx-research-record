@@ -1,10 +1,7 @@
 spring:
   application:
     name: eureka-client-1
-  boot:
-    admin:
-      client:
-        url: http://localhost:31000
+
 server:
   port: 32001
   servlet:

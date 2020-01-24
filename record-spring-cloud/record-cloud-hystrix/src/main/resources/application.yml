@@ -1,10 +1,7 @@
 spring:
   application:
     name: cloud-hystrix
-  boot:
-    admin:
-      client:
-        url: http://localhost:31000
+
 server:
   port: 32006
   servlet:

@@ -14,7 +14,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>org.thenx.research.record</groupId>
     <artifactId>record-spring-cloud</artifactId>
@@ -26,7 +26,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot-admin.version>2.2.1</spring-boot-admin.version>
     </properties>
 
     <dependencies>
@@ -46,23 +45,10 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <!-- 服务端 -->
             <dependency>
