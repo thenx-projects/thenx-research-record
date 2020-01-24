@@ -11,10 +11,6 @@ spring:
 server:
   port: 31001
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:32000/eureka
 
 # 添加监控规则
 management:
