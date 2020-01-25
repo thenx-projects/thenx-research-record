@@ -3,6 +3,11 @@ package org.thenx.record.recordkafka;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author thenx
+ * <p>
+ * Kafka 启动功能模块
+ */
 @SpringBootApplication
 public class RecordKafkaApplication {
 
