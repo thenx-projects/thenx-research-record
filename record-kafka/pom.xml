@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>org.thenx.record</groupId>
-    <artifactId>record-spring-boot-swagger</artifactId>
+    <artifactId>record-kafka</artifactId>
     <version>1.0.0</version>
-    <name>record-spring-boot-swagger</name>
-    <description>Spring Boot 集成 Swagger 接口文档及接口测试</description>
+    <name>record-kafka</name>
+    <description>Kafka 技术模块</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -23,17 +23,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <!-- Swagger 依赖 -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
         <dependency>
@@ -47,7 +39,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
