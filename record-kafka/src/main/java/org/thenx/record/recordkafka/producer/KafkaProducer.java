@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class KafkaProducer {
 
     @Resource
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String, Object> kafkaTemplate;
 
     /**
      * 消息发送
