@@ -42,6 +42,8 @@ spring:
     # 在侦听器容器中运行的线程数
     listener:
       concurrency: 3
+      # 启动的时候不一定就指定了 topic，所以这里需要关闭missingTopicsFatal属性
+      missing-topics-fatal: false
 
 server:
   port: 35000
