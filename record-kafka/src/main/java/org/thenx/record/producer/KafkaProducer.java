@@ -17,10 +17,7 @@ public class KafkaProducer {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMsg(String msg) {
-        if (msg == null || msg.isEmpty()) {
-            msg = "启动加载消息为空";
-        } else {
-            kafkaTemplate.send("topic", msg);
-        }
+        System.out.println("producer 消息： " + msg);
+        kafkaTemplate.send("topic", msg);
     }
 }
