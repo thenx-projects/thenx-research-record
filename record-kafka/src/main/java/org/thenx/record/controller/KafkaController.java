@@ -7,6 +7,7 @@ import org.thenx.record.consumer.KafkaConsumer;
 import org.thenx.record.producer.KafkaProducer;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author thenx
@@ -36,5 +37,15 @@ public class KafkaController {
             producer.sendMsg(msg);
         }
         return kafkaConsumer.receive(msg);
+    }
+
+    @GetMapping(value = "/sendList")
+    public List<String> sendMsgList(@RequestParam(value = "msg", required = false) List<String> msg) {
+        if (msg == null || msg.isEmpty()) {
+            producer.sendMsg("消息为空");
+        } else {
+            producer.sendListMsg(msg);
+        }
+        return kafkaConsumer.receiveList(msg);
     }
 }
