@@ -6,6 +6,7 @@
     <modules>
         <module>kafka-producer</module>
         <module>kafka-consumer</module>
+        <module>kafka-test</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
