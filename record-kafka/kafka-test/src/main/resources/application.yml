@@ -1,0 +1,8 @@
+server:
+  port: 35002
+  servlet:
+    context-path: /kafka/test
+spring:
+  application:
+    name: kafka-test
+
