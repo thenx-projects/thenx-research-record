@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: spring-kafka-consumer
+
+  kafka:
+    # kafka 地址, 以逗号分隔的地址列表， 用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
+    bootstrap-servers: localhost:9092
+
+    # 消费者
+    consumer:
+      group-id: group_id_in_there
+      # 该属性指定了消费者在读取一个没有偏移量的分区或者偏移量无效的情况下该作何处理：
+      # latest（默认值）在偏移量无效的情况下，消费者将从最新的记录开始读取数据（在消费者启动之后生成的记录）
+      # earliest ：在偏移量无效的情况下，消费者将从起始位置读取分区的记录
+      auto-offset-reset: earliest
+      # 键的反序列化方式
+      #      key-deseria lizer: org.apache.kafka.common.serialization.StringDeserializer
+      # 值的反序列化方式
+      #      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 自动提交的时间间隔 在spring boot 2.X 版本中这里采用的是值的类型为Duration 需要符合特定的格式，如1S,1M,2H,5D
+      auto-commit-interval: 1S
+      # 是否自动提交偏移量，默认值是true,为了避免出现重复数据和数据丢失，可以把它设置为false,然后手动提交偏移量
+      enable-auto-commit: true
+
+    # 在侦听器容器中运行的线程数
+    listener:
+      concurrency: 3
+      # 启动的时候不一定就指定了 topic，所以这里需要关闭missingTopicsFatal属性
+      missing-topics-fatal: false
+
+server:
+  port: 35001
+  servlet:
+    context-path: /kafka/cosumer
+
+

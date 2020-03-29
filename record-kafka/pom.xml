@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>kafka-producer</module>
+        <module>kafka-consumer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
