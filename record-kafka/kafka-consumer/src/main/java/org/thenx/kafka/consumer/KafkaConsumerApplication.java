@@ -1,4 +1,4 @@
-package org.thenx.record;
+package org.thenx.kafka.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,13 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author thenx
  * <p>
- * Kafka 启动功能模块
+ * Kafka 消费者模块
  */
 @SpringBootApplication
-public class RecordKafkaApplication {
+public class KafkaConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RecordKafkaApplication.class, args);
+        SpringApplication.run(KafkaConsumerApplication.class);
     }
-
 }

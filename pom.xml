@@ -12,6 +12,7 @@
         <module>record-spring-boot-redis</module>
         <module>record-spring-security</module>
         <module>record-comprehensive</module>
+        <module>record-kafka</module>
     </modules>
 
     <groupId>org.thenx.research.record</groupId>

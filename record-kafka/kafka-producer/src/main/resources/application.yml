@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: spring-kafka-producer
+
+  kafka:
+    # kafka 地址, 以逗号分隔的地址列表， 用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
+    bootstrap-servers: localhost:9092
+    # 生产者
+    producer:
+      # 键的序列化方式
+      #      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 值的序列化方式
+      #      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 发生错误后，消息重发的次数
+      retries: 0
+      # 当有多个消息需要被发送到同一个分区时，生产者会把它们放在同一个批次里。该参数指定了一个批次可以使用的内存大小，按照字节数计算
+      batch-size: 10240
+      # 设置生产者内存缓冲区的大小
+      buffer-memory: 20480
+      # 服务响应
+      # acks = 0 ： 生产者在成功写入消息之前不会等待任何来自服务器的响应
+      # acks = 1 ： 只要集群的首领节点收到消息，生产者就会收到一个来自服务器成功响应
+      # acks = all ：只有当所有参与复制的节点全部收到消息时，生产者才会收到一个来自服务器的成功响应
+      acks: 1
+
+
+    # 在侦听器容器中运行的线程数
+    listener:
+      concurrency: 3
+      # 启动的时候不一定就指定了 topic，所以这里需要关闭missingTopicsFatal属性
+      missing-topics-fatal: false
+
+server:
+  port: 35000
+  servlet:
+    context-path: /kafka/producer
+
+
