@@ -64,6 +64,12 @@
                 <artifactId>kafka-producer</artifactId>
                 <version>1.0.0</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.thenx.record.kafka</groupId>
+                <artifactId>kafka-consumer</artifactId>
+                <version>1.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
