@@ -10,9 +10,7 @@ import org.thenx.kafka.entity.KafkaTestEntity;
 import org.thenx.kafka.producer.service.KafkaProducer;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author thenx
@@ -33,7 +31,17 @@ public class KafkaTestController {
         String data = msg + UUID.randomUUID().toString();
         KafkaTestEntity kafkaTestEntity = this.get();
 
-        String s = mapper.writeValueAsString(kafkaTestEntity);
+        List<KafkaTestEntity> list = new ArrayList<>();
+        list.add(kafkaTestEntity);
+        list.add(kafkaTestEntity);
+        list.add(kafkaTestEntity);
+
+        Map<String, Object> map1 = new HashMap<>(6);
+        map1.put("1", kafkaTestEntity);
+        map1.put("2", kafkaTestEntity);
+        map1.put("3", kafkaTestEntity);
+
+        String s = mapper.writeValueAsString(map1);
         kafkaProducer.sendMsg("topic02", s);
         Map<String, String> map = new HashMap<>(4);
         map.put("topic02", data);
