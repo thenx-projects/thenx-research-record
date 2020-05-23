@@ -7,6 +7,7 @@
         <module>kafka-producer</module>
         <module>kafka-consumer</module>
         <module>kafka-test</module>
+        <module>kafka-consumer-b</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -68,6 +69,12 @@
             <dependency>
                 <groupId>org.thenx.record.kafka</groupId>
                 <artifactId>kafka-consumer</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.record.kafka</groupId>
+                <artifactId>kafka-consumer-b</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>

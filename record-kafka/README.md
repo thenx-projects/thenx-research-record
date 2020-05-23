@@ -12,8 +12,17 @@ kafka 启动分为 zookeeper server和 kafka server
 ` $ bin/kafka-server-start.sh config/server.properties`
 
 ## kafka基本操作
-### 创建 Topiic
+### 创建 Topic
 `$ kafka-topics.sh --zookeeper localhost:2181 --create --topic topic02 --partitions 2 --replication-factor`
+
+### 删除 Topic
+必须先设置两个配置在 `server.properties` 中，否则只会标记为删除
+
+- `$ delete.topic.enable=true`
+- `$ auto.create.topics.enable=false`
+
+删除命令：
+` $ kafka-topics.sh --zookeeper localhost:2181 --delete --topic topic02`
 
 ### 查询 topic
 ` $ kafka-topics.sh --zookeeper localhost:2181 --list `
