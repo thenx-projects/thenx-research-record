@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-kafka-consumber-b
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      auto-offset-reset: earliest
+      auto-commit-interval: 1S
+      enable-auto-commit: false
+    listener:
+      concurrency: 5
+      missing-topics-fatal: false
+      ack-mode: manual
+server:
+  port: 35003
+  servlet:
+    context-path: /kafka/consumer/b
