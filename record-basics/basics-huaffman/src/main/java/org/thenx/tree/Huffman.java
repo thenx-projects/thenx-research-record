@@ -46,6 +46,8 @@ public class Huffman {
 
         System.out.println("原长度：" + str.length());
 
+        System.out.println("原字符：" + str);
+
         System.out.println("压缩后：" + Huffman.compress(str).length());
 
         System.out.println("解压缩：" + Huffman.uncompress(Huffman.compress(str)));
