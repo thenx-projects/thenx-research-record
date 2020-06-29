@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>thenx-research-record</artifactId>
+        <artifactId>record-basics</artifactId>
         <groupId>org.thenx.research.record</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>record-basics</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>basics-snowflake</module>
-        <module>basics-huaffman</module>
-        <module>basics-rle</module>
-    </modules>
+    <artifactId>basics-rle</artifactId>
 
 
 </project>
