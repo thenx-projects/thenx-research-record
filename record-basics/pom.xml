@@ -15,7 +15,36 @@
         <module>basics-snowflake</module>
         <module>basics-huaffman</module>
         <module>basics-rle</module>
+        <module>basics-retract</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-huaffman</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-rle</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-snowflake</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-retract</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
