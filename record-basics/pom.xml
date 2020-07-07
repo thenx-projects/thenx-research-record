@@ -17,5 +17,27 @@
         <module>basics-rle</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-huaffman</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-rle</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>basics-snowflake</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
