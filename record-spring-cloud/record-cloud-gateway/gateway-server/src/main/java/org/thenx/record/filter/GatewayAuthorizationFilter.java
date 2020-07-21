@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
+import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +27,12 @@ public class GatewayAuthorizationFilter extends AbstractGatewayFilterFactory {
             ServerHttpRequest request = exchange.getRequest();
             ServerHttpRequest.Builder mutate = request.mutate();
             ServerHttpResponse response = exchange.getResponse();
+
+            String authorization = request.getHeaders().getFirst("Authorization");
+            if (authorization == null || authorization.isEmpty()) {
+                DataBuffer bodyDataBuffer = responseErrorInfo(response, HttpStatus.UNAUTHORIZED.toString(), "无效的请求");
+                return response.writeWith(Mono.just(bodyDataBuffer));
+            }
 
             ServerHttpRequest build = mutate.build();
             return chain.filter(exchange.mutate().request(build).build());
