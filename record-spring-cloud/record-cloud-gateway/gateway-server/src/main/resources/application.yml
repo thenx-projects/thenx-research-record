@@ -24,9 +24,9 @@ spring:
           uri: lb://gateway-client-a
           #          uri: http://localhost:32021
           predicates:
-            - Path=/client/**
+          - Path=/client/**
           filters:
-            - StripPrefix=1
+          - StripPrefix=1
 server:
   port: 32020
 
