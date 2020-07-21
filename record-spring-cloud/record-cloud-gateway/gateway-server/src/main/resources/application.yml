@@ -3,6 +3,18 @@ spring:
     name: gateway-server
   cloud:
     gateway:
+      # 跨域
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+                POST
+                DELETE
+                PUT
+                OPTION
       discovery:
         locator:
           enabled: true
@@ -10,10 +22,11 @@ spring:
       routes:
         - id: gateway-client-a
           uri: lb://gateway-client-a
+          #          uri: http://localhost:32021
           predicates:
-            - Path=/client/**
+          - Path=/client/**
           filters:
-            - StripPrefix=1
+          - StripPrefix=1
 server:
   port: 32020
 
