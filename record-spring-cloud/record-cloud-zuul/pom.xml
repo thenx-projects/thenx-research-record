@@ -2,6 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>zuul-server</module>
+        <module>zuul-client-a</module>
+        <module>zuul-client-b</module>
+    </modules>
     <parent>
         <groupId>org.thenx.research.record</groupId>
         <artifactId>record-spring-cloud</artifactId>
@@ -12,7 +17,7 @@
     <version>1.0.0</version>
     <name>record-cloud-zuul</name>
     <description>Spring Cloud Zuul 网关</description>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -39,6 +44,22 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.record</groupId>
+                <artifactId>zuul-server</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.thenx.record</groupId>
+                <artifactId>zuul-client-a</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.thenx.record</groupId>
+                <artifactId>zuul-client-b</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
