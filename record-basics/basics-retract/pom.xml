@@ -11,5 +11,21 @@
 
     <artifactId>basics-retract</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.thenx.research.record</groupId>
+            <artifactId>basics-huaffman</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thenx.research.record</groupId>
+            <artifactId>basics-snowflake</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thenx.research.record</groupId>
+            <artifactId>basics-rle</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

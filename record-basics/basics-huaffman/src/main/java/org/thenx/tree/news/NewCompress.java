@@ -139,7 +139,7 @@ public class NewCompress {
         System.out.println("压缩前：" + previouslyData);
         System.out.println("压缩后:" + suffixLength);
         System.out.println("压缩比率:" + String.format("%.2f", res) + "%");
-//        System.out.println("解压之后的字符串:" + s);
+        System.out.println("解压之后的字符串:" + s);
     }
 
     public static void write(byte[] b, String name) {
