@@ -6,11 +6,11 @@ import org.springframework.cloud.client.SpringCloudApplication;
 /**
  * @author May
  * <p>
- * Gateway 网关
+ * Gateway client a
  */
 @SpringCloudApplication
-public class GatewayApplication {
+public class GatewayClientOneApplication {
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(GatewayClientOneApplication.class, args);
     }
 }
