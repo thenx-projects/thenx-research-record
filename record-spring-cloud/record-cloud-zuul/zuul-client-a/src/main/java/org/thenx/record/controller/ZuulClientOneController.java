@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/client")
 public class ZuulClientOneController {
 
+    @GetMapping(value = "/")
+    public String getDefault() {
+        return "默认请求 !";
+    }
+
     @GetMapping(value = "/a")
     public String getZuulClientA() {
         return "客户端A !";

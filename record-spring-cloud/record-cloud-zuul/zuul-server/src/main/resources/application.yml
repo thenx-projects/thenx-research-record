@@ -1,15 +1,33 @@
 spring:
   application:
-    name: record-zuul
+    name: ZuulServer
 
 server:
   port: 32010
-  servlet:
-    context-path: /zuul
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:32000/eureka
+
+#zuul:
+#  routes:
+#    routes-zuul: /control/**
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
 zuul:
+  ribbon-isolation-strategy: thread
   routes:
-    routes-zuul: /control/**
+    zuul-client-a:
+      path: /client/**
+      service-id: zuul-client-a
+      senstiveHeaders: Cookie, Set-Cookie, Authorization
+  ignored-services: "*"
+ribbon:
+  eureka:
+    enabled: true
