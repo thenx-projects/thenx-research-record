@@ -8,12 +8,12 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: gateway-client-a
-          uri: lb://gateway-client-a
-          predicates:
-            - Path=/client/**
-          filters:
-            - StripPrefix=1
+      - id: gateway-client-a
+        uri: lb://gateway-client-a
+        predicates:
+          - Path=/client/**
+        filters:
+          - StripPrefix=1
 server:
   port: 32020
 
