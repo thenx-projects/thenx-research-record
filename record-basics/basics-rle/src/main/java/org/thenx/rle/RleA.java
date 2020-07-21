@@ -1,9 +1,11 @@
 package org.thenx.rle;
 
+import java.io.UnsupportedEncodingException;
+
 public class RleA {
 
     public static void main(String[] args) {
-        String source = "110000011010000000001011101100110010100010001001000111001100001110101010001000110001010010111011001110100000101110110011001000100011000000111011101010011100001000111001101100101000101001001";
+        String source = "20200507c63b5f2255fa4efb9b06a3bebd176c15";
         System.out.println("source length: " + source.length());
         String s = rleCompress(source);
         System.out.println("---> rle compression: " + s + " \n&length: " + s.length());
