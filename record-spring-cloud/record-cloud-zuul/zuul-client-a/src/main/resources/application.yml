@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zuul-client-a
+
+server:
+  port: 32011
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:32000/eureka
