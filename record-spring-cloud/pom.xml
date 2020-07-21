@@ -9,6 +9,7 @@
         <module>record-cloud-feign-client-1</module>
         <module>record-cloud-hystrix</module>
         <module>record-cloud-zuul</module>
+        <module>record-cloud-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -23,29 +24,9 @@
     <description>Spring Cloud系列技术总结</description>
     <packaging>pom</packaging>
 
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -81,6 +62,13 @@
             <dependency>
                 <groupId>org.thenx.research.hystrix</groupId>
                 <artifactId>record-cloud-hystrix</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Gateway -->
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>record-cloud-gateway</artifactId>
                 <version>1.0.0</version>
             </dependency>
 
