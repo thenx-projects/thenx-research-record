@@ -9,6 +9,7 @@
         <module>record-cloud-feign-client-1</module>
         <module>record-cloud-hystrix</module>
         <module>record-cloud-zuul</module>
+        <module>record-cloud-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -81,6 +82,13 @@
             <dependency>
                 <groupId>org.thenx.research.hystrix</groupId>
                 <artifactId>record-cloud-hystrix</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- Gateway -->
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>record-cloud-gateway</artifactId>
                 <version>1.0.0</version>
             </dependency>
 
