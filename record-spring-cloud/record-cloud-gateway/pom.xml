@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>record-cloud-gateway</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>gateway-server</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -39,6 +43,12 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.research.record</groupId>
+                <artifactId>gateway-server</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
